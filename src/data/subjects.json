@@ -1,0 +1,34 @@
+{
+    "subjects":[
+        {
+            "key": 0,
+            "nombre":"Laboratorio de aplicaciones Web",
+            "calificacion":100
+        },
+        {
+            "key": 1,
+            "nombre":"Métodos cuantitativos y simulación",
+            "calificacion":99
+        },
+        {   
+            "key": 2,
+            "nombre":"Proyecto Integrador",
+            "calificacion":98
+        },
+        {
+            "key": 3,
+            "nombre":"Introducción a la vida profesional",
+            "calificacion":97
+        },
+        {
+            "key": 4,
+            "nombre":"Robótica aplicada",
+            "calificacion":96
+        },
+        {
+            "key": 5,
+            "nombre":"Adminsitración de proyectos de ingeniería de software",
+            "calificacion":97
+        }
+    ]
+}
