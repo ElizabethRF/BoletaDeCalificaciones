@@ -7,12 +7,16 @@ import TableRow from '@material-ui/core/TableRow';
 
 import { subjects } from '../data/subjects.json';
 class Grades extends React.Component{
-    constructor(){
-        super(); 
+    constructor(props){
+        super(props); 
         this.state = { subjects}
+        const subjectss  ={subjects}
     }
+    
+    
     render(){
 
+      this.props.gradesFromApp(subjects);
         const subj = this.state.subjects.map((x,i) => {
             return(
                 <TableRow >

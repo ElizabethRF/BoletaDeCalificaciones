@@ -11,7 +11,11 @@ class Average extends React.Component{
     const average  = {
     }
       return(
-          <h1>Promedio</h1>
+          <div>
+            <h1>Promedio</h1>
+            <p>{this.props.calif}0</p>
+            <p>"sos"</p>
+          </div>
       ); 
      
 

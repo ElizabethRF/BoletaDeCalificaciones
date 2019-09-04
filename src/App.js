@@ -12,46 +12,57 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
 
-function App() {
-  return (
-    <div>
-    <AppBar position="static">
-        <Toolbar>
-          <Typography variant="h6" >
-            Boleta de calificaciones
-          </Typography>
-        </Toolbar>
-      </AppBar>
-      <Grid container spacing={2}>
-      <Grid item xs={4}>
-          <Card>
-          <CardContent>
-            <PersonalData/>
-          </CardContent>
-        </Card>
-      </Grid>
-      <Grid item xs={3}>
-        <Card>
-          <CardContent>
-            <Average/>
-          </CardContent>
-        </Card>
-      </Grid>
+class App extends React.Component{
+  constructor(props){
+    super(props); 
+    this.state = {
+      listGrades: null
+    }; 
+  }
 
-      <Grid item xs={7}>
-        <Card>
-          <CardContent>
-            <Grades/>
-          </CardContent>
-        </Card>
-      </Grid>
-      </Grid>
-    
-    
-    
-    </div>
-    
-  );
+  gradesData= (params)=>{
+    this.setState({ listGrades: params})
+  }
+
+  render(){
+    return (
+      <div>
+      <AppBar position="static">
+          <Toolbar>
+            <Typography variant="h6" >
+              Boleta de calificaciones
+            </Typography>
+          </Toolbar>
+        </AppBar>
+        <Grid container spacing={2}>
+        <Grid item xs={6}>
+            <Card>
+            <CardContent>
+              <PersonalData/>
+            </CardContent>
+          </Card>
+        </Grid>
+        <Grid item xs={6}>
+          <Card>
+            <CardContent>
+              <Average gradesFromApp={gradesData}/>
+            </CardContent>
+          </Card>
+        </Grid>
+  
+        <Grid item xs={12}>
+          <Card>
+            <CardContent>
+              <Grades gradesFromApp={this.gradesData}/>
+            </CardContent>
+          </Card>
+        </Grid>
+        </Grid>
+      
+      </div> 
+
+);}
+  
 }
 
 export default App;
