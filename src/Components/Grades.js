@@ -10,18 +10,16 @@ class Grades extends React.Component{
     constructor(props){
         super(props); 
         this.state = {subjects:  subjects}
+        this.props.funcionParaHijo(subjects);
+
     }
 
     
     render(){
-
-      if(!this.props.sentData) {
-        this.props.funcionParaHijo(subjects);
-      }
       
-        const subj = this.state.subjects.map((x,i) => {
+        const subj = this.state.subjects.map((x,index) => {
             return(
-                <TableRow >
+                <TableRow key={index} >
                 <TableCell component="th" scope="row">
                     {x.nombre}
                 </TableCell>

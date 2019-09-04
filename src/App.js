@@ -21,7 +21,20 @@ class App extends React.Component{
   }
 
   gradesData = (params)=>{
-    this.setState({ listGrades: params,received : true})
+    this.setState({ listGrades: params,received : true});
+    console.log("params");
+    console.log( params);
+    console.log("params");
+    console.log( params);
+  }
+
+  test() {
+    const {listGrades} = this.state; 
+    if(listGrades !== null){
+      return <Average gradesList={this.state.listGrades} /> ; 
+        
+    }
+    return null; 
   }
 
   
@@ -50,7 +63,7 @@ class App extends React.Component{
         <Grid item xs={6}>
           <Card>
             <CardContent>
-              <Average gradesList={this.state.hardcodedValues} />
+              {this.test()}
             </CardContent>
           </Card>
         </Grid>
