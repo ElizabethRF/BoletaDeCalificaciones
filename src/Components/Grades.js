@@ -9,14 +9,16 @@ import { subjects } from '../data/subjects.json';
 class Grades extends React.Component{
     constructor(props){
         super(props); 
-        this.state = { subjects}
-        const subjectss  ={subjects}
+        this.state = {subjects:  subjects}
     }
-    
+
     
     render(){
 
-      this.props.gradesFromApp(subjects);
+      if(!this.props.sentData) {
+        this.props.funcionParaHijo(subjects);
+      }
+      
         const subj = this.state.subjects.map((x,i) => {
             return(
                 <TableRow >

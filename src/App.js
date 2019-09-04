@@ -11,21 +11,26 @@ import Typography from '@material-ui/core/Typography';
 import Toolbar from '@material-ui/core/Toolbar';
 import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
+import { subjects } from './data/subjects.json';
+
 
 class App extends React.Component{
   constructor(props){
     super(props); 
-    this.state = {
-      listGrades: null
-    }; 
+    this.state = {listGrades:  null, hardcodedValues : subjects,  received: false}
   }
 
-  gradesData= (params)=>{
-    this.setState({ listGrades: params})
+  gradesData = (params)=>{
+    this.setState({ listGrades: params,received : true})
   }
+
+  
 
   render(){
+
+    
     return (
+      
       <div>
       <AppBar position="static">
           <Toolbar>
@@ -45,7 +50,7 @@ class App extends React.Component{
         <Grid item xs={6}>
           <Card>
             <CardContent>
-              <Average gradesFromApp={gradesData}/>
+              <Average gradesList={this.state.hardcodedValues} />
             </CardContent>
           </Card>
         </Grid>
@@ -53,7 +58,7 @@ class App extends React.Component{
         <Grid item xs={12}>
           <Card>
             <CardContent>
-              <Grades gradesFromApp={this.gradesData}/>
+              <Grades funcionParaHijo = {this.gradesData} sentData={this.state.received}/>
             </CardContent>
           </Card>
         </Grid>
@@ -61,8 +66,13 @@ class App extends React.Component{
       
       </div> 
 
-);}
+);
+
+}
   
+
+
+
 }
 
 export default App;

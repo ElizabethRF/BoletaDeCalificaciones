@@ -11,8 +11,7 @@ class PersonalData extends React.Component{
       return(
           <div>
             <h1>Datos personales</h1>
-                  <p>{this.state.people[0].nombre}  {this.state.people[0].apellidos}</p>
-                  <p>{this.state.people[0].carrera}  Semestre: {this.state.people[0].semestre}</p>
+                  <p>{this.state.people[0].nombre} {this.state.people[0].apellidos} Carrera: {this.state.people[0].carrera}  Semestre: {this.state.people[0].semestre}</p>
                 
           </div>
         
